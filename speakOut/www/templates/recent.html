@@ -1,0 +1,17 @@
+<ion-view view-title='Recently Talked'>
+  <ion-content>
+    <ion-list>
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" ng-model="search">
+      </label>
+      <ion-item collection-repeat="recentItem in recentList| filter:search">
+        <a ng-click="SpeakOut(recentItem)"  href="" value="{{recentItem}}">
+          <i class="icon ion-speakerphone"></i>
+          {{recentItem}}
+        </a>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+</ion-view>
