@@ -2,13 +2,7 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
+  
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -57,9 +51,6 @@ angular.module('starter.controllers', ['ionic'])
   for (var i = 0; i < localStorage.length; i++){
     $scope.recentList.push(localStorage.getItem(localStorage.key(i)));
 
-    // if($scope.recentList.indexOf(localStorage.getItem(localStorage.key(i))) == -1){
-    //   $scope.recentList.push(localStorage.getItem(localStorage.key(i)));
-    // }
   }
 
   $scope.SpeakOut = function(parm){
@@ -70,13 +61,6 @@ angular.module('starter.controllers', ['ionic'])
     test.rate = 0.5;
     speechSynthesis.speak(test);
     alert(parm);
-//     function he(){
-// $ionicPopup.alert({
-//      title: localStorage.getItem(localStorage.key(0)),
-//      template: localStorage.length
-//    });
-//  };
-//  he();
   }
 })
 
@@ -86,12 +70,6 @@ angular.module('starter.controllers', ['ionic'])
  };
  $scope.recognizedText = '';
 
-//  $scope.speakText = function() {
-//    localStorage.setItem(localStorage.length+1,$scope.data.speechText,$scope.data.speechText);
-//    window.speechSynthesis.speak(
-//    new SpeechSynthesisUtterance($scope.data.speechText)
-// );
-// };
 
 $scope.speakText = function() {
 
@@ -103,65 +81,7 @@ $scope.speakText = function() {
   speechSynthesis.speak(test);
   localStorage.setItem(localStorage.length+1,txt,txt);
 
-  //
-  // window.plugins.TTS.speak('hello, world!', function () {
-  //         //alert('success');
-  //     }, function (reason) {
-  //         //alert(reason);
-  //     });
-  //
-  //     $scope.speak = function() {
-  //
-  //            var test = new SpeechSynthesisUtterance();
-  //            txt = $scope.data.speechText;
-  //            test.text = txt;
-  //            test.lang = 'en-US';
-  //            speechSynthesis.speak(test);
-  //            navigator.notification.vibrate(2000);
-  //
-  //         };
-
-
-
-//   var audio = new Audio();
-// audio.src ='http://translate.google.com/translate_tts?ie=utf-8&tl=en&q='+$scope.data.speechText;
-// audio.play();
-  // $ionicPopup.alert({
-  //    title: window.cordova,
-  //    template: document.addEventListener('deviceready', function () {
-  //    TTS.speak('hello, world');
-  //    }, false)
-  //  });
-  //  TTS.speak({
-  //          text: '***this place is for the code***',
-  //          locale: 'en-GB',
-  //          rate: 0.75
-  //      }, function () {
-  //          // handle the succes case
-  //      }, function (reason) {
-  //          // Handle the error case
-  //      });
- // window.TTS.speak({
- //        text: $scope.data.speechText,
- //        locale: 'en-GB',
- //        rate: 1.5
- //    }, function () {
- //        // Do Something after success
- //    }, function (reason) {
- //        // Handle the error case
- //    });
 };
-
-  //  window.TTS.speak({
-  //         text: $scope.data.speechText,
-  //         locale: 'en-GB',
-  //         rate: 1.5
-  //     }, function () {
-  //         // Do Something after success
-  //         alert('ok');
-  //     }, function (reason) {
-  //         // Handle the error case
-  //     });
 
 
 
@@ -173,8 +93,7 @@ $scope.speakText = function() {
       // localStorage.setItem("array",remArray);
 
     }
-    // console.log(remArray+"sdddd "+localStorage.getItem("array").a);
-
+   
 })
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
